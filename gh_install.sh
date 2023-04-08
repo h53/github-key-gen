@@ -1,4 +1,3 @@
-
 version=2.27.0
 
 function get_gh_cli()
@@ -37,5 +36,3 @@ rm -rf content.tar.gz
 if [[ ! -d gh_cli ]]; then
   get_gh_cli 
 fi
-
-export PATH=$(pwd)/gh_cli/bin/:$PATH
