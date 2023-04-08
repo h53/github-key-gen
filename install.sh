@@ -1,7 +1,7 @@
 #!/bin/bash
 
-prefix=$1
-suffix=$2
+prefix=$0
+suffix=$1
 
 username=h53
 repo=github-key-gen
