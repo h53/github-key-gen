@@ -1,3 +1,4 @@
+# https://github.com/cli/cli/releases
 version=2.27.0
 
 function get_gh_cli()
