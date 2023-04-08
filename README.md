@@ -2,7 +2,7 @@
 
 ## download script
 ```
-git clone https://github.com/h53/github-key-gen.git --depth=1
+git clone git@github.com:h53/github-key-gen.git --depth=1
 ```
 
 ## add ssh key to github
