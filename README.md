@@ -1,33 +1,38 @@
 # github-key-gen
 
-## download script
+## run once
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/h53/github-key-gen/main/install.sh)"
+```
+
+### download script
 ```
 git clone git@github.com:h53/github-key-gen.git --depth=1
 ```
 
-## add ssh key to github
+### add ssh key to github
 ```
 ./localrun.sh
 ```
 
-## check key status
+### check key status
 ```
 ssh -T git@github-keygen
 ```
 
-## change repo url
+### change repo url
 ```
 ./change_url.sh
 
 git remote -v
 ```
 
-## config git user/email
+### config git user/email
 ```
 ./git_config.sh
 ```
 
-## commit changes
+### commit changes
 ```
 git add .
 git commit -m "update"
