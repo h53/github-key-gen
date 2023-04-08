@@ -2,7 +2,7 @@
 
 ## add ssh key to github
 ```
-sudo ./localrun.sh
+./localrun.sh
 ```
 
 ## check key status
