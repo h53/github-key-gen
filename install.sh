@@ -18,7 +18,9 @@ do
 done
 
 echo generate key...
+cd $folder
 ./localrun.sh
+cd .. 
 
 echo "clean cache"
 rm -rf $folder
