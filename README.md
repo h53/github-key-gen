@@ -4,6 +4,10 @@
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/h53/github-key-gen/main/install.sh)"
 ```
+you can add prefix and suffix in github key title
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/h53/github-key-gen/main/install.sh)" prefix suffix
+```
 
 ### download script
 ```

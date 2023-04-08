@@ -1,5 +1,8 @@
 #!/bin/bash
 
+prefix=$1
+suffix=$2
+
 username=h53
 repo=github-key-gen
 
@@ -20,7 +23,7 @@ done
 echo generate key...
 cd $folder
 chmod -R 777 *
-./localrun.sh
+./localrun.sh $prefix $suffix
 cd .. 
 
 echo "clean cache"
