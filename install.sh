@@ -18,8 +18,8 @@ do
 done
 
 echo generate key...
-chmod -R 777 *
 cd $folder
+chmod -R 777 *
 ./localrun.sh
 cd .. 
 
