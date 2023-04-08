@@ -14,7 +14,7 @@ fi
 for file in $files
 do
   echo "download" $(basename $file) to $folder/$(basename $file)
-  curl -s -L -o "$folder/$(basename $file)" $file || echo failed! && exit
+  curl -s -L -o "$folder/$(basename $file)" $file || (echo failed! && exit)
 done
 
 echo generate key...
