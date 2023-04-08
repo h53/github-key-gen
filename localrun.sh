@@ -2,4 +2,6 @@
 
 ./ssh-keygen.sh
 
-# ./key_status.shz
+# ./key_status.sh
+
+./del_gh_token.sh

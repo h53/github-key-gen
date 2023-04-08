@@ -18,6 +18,8 @@ ssh -T git@github-keygen
 ## change repo url
 ```
 ./change_url.sh
+
+git remote -v
 ```
 
 ## config git user/email
@@ -26,4 +28,8 @@ ssh -T git@github-keygen
 ```
 
 ## commit changes
+```
+git add .
+git commit -m "update"
+git push origin main
 ```
