@@ -1,18 +1,26 @@
-mkdir github-key-gen-tmp
-cd github-key-gen-tmp
+#!/bin/bash
 
-# download
-echo "download..."
-curl -LJO https://github.com/h53/github-key-gen/archive/refs/heads/main.zip && unzip github-key-gen-main.zip
+username=h53
+repo=github-key-gen
 
-echo "generate key..."
-cd github-key-gen-main
+url="https://api.github.com/repos/$username/$repo/contents"
+files=$(curl -s $url | grep -oE '\"download_url\":\s*\"[^\"]+\"' | sed -e 's/"download_url"://' -e 's/"//g')
+
+folder="$(pwd)/$repo-temp"
+if [ ! -d "$folder" ]; then
+  mkdir "$folder"
+fi
+
+for file in $files
+do
+  echo "download" $(basename $file) to $folder/$(basename $file)
+  curl -s -L -o "$folder/$(basename $file)" $file || echo failed! && exit
+done
+
+echo generate key...
 ./localrun.sh
-cd .. # github-key-gen-main
 
-cd .. # github-key-gen-tmp
+echo "clean cache"
+rm -rf $folder
 
-echo "clean cache..."
-rm -rf github-key-gen-tmp
-
-echo "done!"
+echo "done"
