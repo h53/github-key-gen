@@ -15,4 +15,4 @@ repo=`echo $url | sed 's/github.com/github-keygen/'`
 
 echo git $op $repo $params
 
-# git $op $repo $params
+git $op $repo $params
