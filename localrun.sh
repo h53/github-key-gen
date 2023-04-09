@@ -7,5 +7,6 @@ suffix=$2
 ./ssh-keygen.sh $prefix $suffix
 
 # ./key_status.sh
+echo https://github.com/settings/keys to see keys!
 
 ./del_gh_token.sh
