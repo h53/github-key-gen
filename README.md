@@ -4,7 +4,14 @@
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/h53/github-key-gen/main/install.sh)"
 ```
-you can add prefix and suffix in github key title
+
+### how to clone repo
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/h53/github-key-gen/main/keygen_git.sh)" clone git@github.com:h53/github-key-gen.git --depth=1
+```
+---
+
+### [optional] you can add prefix and suffix in github key title
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/h53/github-key-gen/main/install.sh)" prefix suffix
 ```
