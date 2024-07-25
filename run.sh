@@ -4,6 +4,11 @@ prefix=$0
 suffix=$1
 sshKeyFile=id_github_keygen
 
+if [[ $0 =~ "run.sh" ]]; then
+  prefix=$1
+  suffix=$2
+fi
+
 #### gh install start
 echo install gh...
 
