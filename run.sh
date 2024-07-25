@@ -87,23 +87,28 @@ ssh-keygen -t rsa -b 4096 -C "$title" -f ~/.ssh/${sshKeyFile}
 
 ssh-agent ssh-add ~/.ssh/${sshKeyFile}
 
-if [[ "$OSTYPE" != "msys" ]]; then
-  gh auth login -h github.com -s admin:public_key
-  # gh auth refresh -h github.com -s admin:public_key
-  gh ssh-key add < ~/.ssh/${sshKeyFile}.pub --title "$title"
-fi
-
 addConfigItem
 
 ### ssh keygen end
 
-# test connection
-ssh -T git@github.com
+if [[ "$OSTYPE" == "msys" ]]; then
+  echo "please add the pub key to github"
+  echo ""
+  cat ~/.ssh/${sshKeyFile}.pub
+  echo ""
+  
+else
+  gh auth login -h github.com -s admin:public_key
+  # gh auth refresh -h github.com -s admin:public_key
+  gh ssh-key add < ~/.ssh/${sshKeyFile}.pub --title "$title"
+  # del gh token
+  rm ~/.config/gh/hosts.yml
+
+  # test connection
+  ssh -T git@github.com
+fi
 
 echo https://github.com/settings/keys to see keys!
-
-# del gh token
-rm ~/.config/gh/hosts.yml
 
 # del gh bin
 rm -rf gh_cli
