@@ -18,7 +18,8 @@ git clone git@github.com:h53/github-keygen.git --depth=1
 
 ### config git user/email
 ```
-./git_config.sh
+git config user.email "github-keygen `uname`-`arch` [`date`]"
+git config user.name "`whoami`"
 ```
 
 ### commit changes
