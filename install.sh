@@ -79,7 +79,7 @@ function addConfigItem()
     echo "Added github.com in ~/.ssh/config"
 }
 
-sshKeyFile=id_github_key_gen
+sshKeyFile=id_github_keygen
 title="${prefix}github-keygen-`uname`-`arch`[`date`]`whoami`(`hostname`)$suffix"
 
 ssh-keygen -t rsa -b 4096 -C "$title" -f ~/.ssh/${sshKeyFile}
