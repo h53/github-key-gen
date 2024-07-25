@@ -6,7 +6,10 @@ suffix=$2
 
 ./ssh-keygen.sh $prefix $suffix
 
-# ./key_status.sh
+# test connection
+ssh -T git@github.com
+
 echo https://github.com/settings/keys to see keys!
 
-./del_gh_token.sh
+# del gh token
+rm ~/.config/gh/hosts.yml

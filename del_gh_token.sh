@@ -1,1 +1,0 @@
-rm ~/.config/gh/hosts.yml

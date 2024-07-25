@@ -2,19 +2,10 @@
 
 ## run once
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/h53/github-key-gen/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/h53/github-key-gen/main/install.sh)" [prefix] [suffix]
 ```
 
-### how to clone repo
-```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/h53/github-key-gen/main/keygen_git.sh)" clone git@github.com:h53/github-key-gen.git --depth=1
-```
 ---
-
-### [optional] you can add prefix and suffix in github key title
-```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/h53/github-key-gen/main/install.sh)" prefix suffix
-```
 
 ### download script
 ```
@@ -28,14 +19,7 @@ git clone git@github.com:h53/github-key-gen.git --depth=1
 
 ### check key status
 ```
-ssh -T git@github-keygen
-```
-
-### change repo url
-```
-./change_url.sh
-
-git remote -v
+ssh -T git@github.com
 ```
 
 ### config git user/email
