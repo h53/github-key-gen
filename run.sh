@@ -14,11 +14,11 @@ base_url=https://github-keygen.pages.dev
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # mac
   echo "mac os!" `arch`
-  url=$base_url"/gh/$OSTYPE/`arch`"
+  url=$base_url"/gh/$OSTYPE/`arch`/content.tar.gz"
 else
   # linux
   echo "linux os!" `arch`
-  url=$base_url"/gh/linux/`arch`"
+  url=$base_url"/gh/linux/`arch`/content.tar.gz"
 fi
 
 echo $url
