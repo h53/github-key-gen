@@ -1,11 +1,7 @@
 # github-keygen
 
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/h53/github-keygen/main/install.sh)" [prefix] [suffix]
-```
-cdn
-```
-bash -c "$(curl -fsSL https://github-keygen.pages.dev/install.sh)"
+bash -c "$(curl -fsSL https://github-keygen.pages.dev/install.sh)" [prefix] [suffix]
 ```
 
 ---
