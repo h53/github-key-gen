@@ -14,6 +14,12 @@ echo install gh...
 
 function get_gh_cli()
 {
+if [[ "$OSTYPE" == "msys" ]]; then
+  # win mingw
+  echo "win os not support gh, please manually copy id_github_keygen.pub to github"
+  return
+fi
+
 base_url=https://github-keygen.pages.dev
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -81,10 +87,11 @@ ssh-keygen -t rsa -b 4096 -C "$title" -f ~/.ssh/${sshKeyFile}
 
 ssh-agent ssh-add ~/.ssh/${sshKeyFile}
 
-gh auth login -h github.com -s admin:public_key
-# gh auth refresh -h github.com -s admin:public_key
-
-gh ssh-key add < ~/.ssh/${sshKeyFile}.pub --title "$title" && \
+if [[ "$OSTYPE" != "msys" ]]; then
+  gh auth login -h github.com -s admin:public_key
+  # gh auth refresh -h github.com -s admin:public_key
+  gh ssh-key add < ~/.ssh/${sshKeyFile}.pub --title "$title"
+fi
 
 addConfigItem
 
@@ -101,4 +108,4 @@ rm ~/.config/gh/hosts.yml
 # del gh bin
 rm -rf gh_cli
 
-echo "done"
+echo "done!"
