@@ -4,7 +4,7 @@ prefix=$0
 suffix=$1
 
 username=h53
-repo=github-key-gen
+repo=github-keygen
 
 url="https://api.github.com/repos/$username/$repo/contents"
 files=$(curl -s $url | grep -oE '\"download_url\":\s*\"[^\"]+\"' | sed -e 's/"download_url"://' -e 's/"//g')
